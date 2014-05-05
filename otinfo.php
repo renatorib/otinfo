@@ -2,7 +2,7 @@
 
 /**
  * @package Open Tibia Information <otinfo>
- * @version 1.0
+ * @version 1.2
  * @author Renato Ribeiro <renatoribeiro@tibiaking.com>
  * @author Ranieri Althoff <ranieri@inf.ufsc.br>
  * @author Gabriel Pedro <contato@gpedro.net>
