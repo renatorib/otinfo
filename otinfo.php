@@ -11,7 +11,7 @@
  *
  */
 
-class otinfo {
+class Otinfo {
 
 	/**
 	 * var connect
