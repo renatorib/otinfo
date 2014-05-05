@@ -44,9 +44,9 @@ class Otinfo {
 	    
 	    /* Localization of the cache file */
 	    $cache_uri = 'cache' . DIRECTORY_SEPARATOR . static::$host . '.json';
-	    if (static::$cache && file_exists($cache_uri) && filemtime($cache_uri) + static::$cache < time()) {
+	    if (static::$cache && file_exists($cache_uri) && filemtime($cache_uri) + static::$cache >= time()) {
        	    $json = file_get_contents($cache_uri);
-       	    $this->attributes = json_decode($json);
+       	    $this->attributes = json_decode($json, true);
        	    return true;
        	} else {
        			
