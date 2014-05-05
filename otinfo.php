@@ -15,25 +15,32 @@
 
 class Otinfo {
 
-    /* Server attributes. */
+    // Server attributes.
     private $attributes;
     
-    /* Server connection information. */
+    // Server connection information.
     private static $host;
     private static $port;
-
-    /* Cache time in seconds. Set to zero if unwanted. */
-	private static $cache = 120;
+    
+    // Cache time in seconds. Set to zero if unwanted. */
+    private static $cache = 120;
+    
+    /** 
+     * Magic message
+     * what makes Open Tibia servers answer with their info. 
+     */
+    private static $message;
 	
-	/* Magic message - what makes Open Tibia servers answer with their info. */
-	private static $message;
-	
-	function __construct($host, $port = 7171) {
-		static::$host = $host;
+    function __construct($host, $port = 7171) {
+        
+        static::$host = $host;
         static::$port = $port;
         
-        /* We initialize here since PHP does not support non-trivial initializers */
-		static::$message = chr(6).chr(0).chr(255).chr(255).'info';
+        /**
+         * We initialize here since PHP does not 
+         * support non-trivial initializers 
+         */
+        static::$message = chr(6).chr(0).chr(255).chr(255).'info';
 	}
 	
 	/**
@@ -43,7 +50,7 @@ class Otinfo {
 	 */
 	public function execute() {
 	    
-	    /* Localization of the cache file */
+	    // Localization of the cache file
 	    $cache_uri = 'cache' . DIRECTORY_SEPARATOR . static::$host . '.json';
 	    if (static::$cache && file_exists($cache_uri) && filemtime($cache_uri) + static::$cache >= time()) {
        	    $json = file_get_contents($cache_uri);
