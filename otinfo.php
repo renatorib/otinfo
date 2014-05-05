@@ -7,7 +7,7 @@
  * @copyright 2014 (C) by Renato Ribeiro <http://tibiaking.com/>
  * @license http://www.gnu.org/licenses/lgpl-3.0.txt GNU Lesser General Public License, Version 3
  * 
- * Oficial repository: https://github.com/renatorib/otinfo
+ * Official repository: https://github.com/renatorib/otinfo
  *
  */
 
