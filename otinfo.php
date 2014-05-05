@@ -5,7 +5,8 @@
  * @version 1.0
  * @author Renato Ribeiro <renatoribeiro@tibiaking.com>
  * @author Ranieri Althoff <ranieri@inf.ufsc.br>
- * @copyright 2014 (C) by Renato Ribeiro <http://tibiaking.com>, Ranieri Althoff <http://otserv.com.br>
+ * @author Gabriel Pedro <contato@gpedro.net>
+ * @copyright 2014 (C) by Renato Ribeiro <http://tibiaking.com>, Ranieri Althoff <http://otserv.com.br>, Gabriel Pedro <http://gpedro.net>
  * @license http://www.gnu.org/licenses/lgpl-3.0.txt GNU Lesser General Public License, Version 3
  * 
  * Official repository: https://github.com/renatorib/otinfo
