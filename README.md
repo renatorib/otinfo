@@ -1,4 +1,3 @@
-otinfo
+OTServer Info
 ======
-
-otserver info
+Catch information from servers by ip and port
