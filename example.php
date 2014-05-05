@@ -1,14 +1,14 @@
 <?php
-include('otinfo.php'); // call the class baby
+require('otinfo.php');
 
-$server = new Otinfo('underwar.org', 7171);
+$server = new Otinfo('underwar.org');
 
-if($server->connect){
-  echo "Players online: " . $server->players_online . " <br /> ";
-  echo "Players max: " . $server->players_max. " <br /> ";
-  echo "Players online record: " . $server->players_peak . " <br /> ";
-  echo "Server location: " . $server->location . " <br /> ";
-  echo "Client version: " . $server->client . " <br /> ";
+if ($server->execute()) {
+    echo 'Players online: ', $server->players['online'], '<br />';
+    echo 'Players max: ', $server->players['max'], '<br />';
+    echo 'Players peak: ', $server->players['peak'], '<br />';
+    echo 'Server location: ', $server->serverinfo['location'], '<br />';
+    echo 'Client version: ', $server->serverinfo['client'] , '<br />';
 } else {
-  echo "Server offline";
+    echo 'Server offline';
 }
