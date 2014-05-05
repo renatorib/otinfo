@@ -54,14 +54,14 @@ class otinfo {
 	public $rates_loot;
 	public $rates_spawn;
 
-	public $object;
-
 	/**
-	 * var cache_check (int)
+	 * var cache_check
+	 * int
 	 * time to recache informations
 	 * 1 = 1 second
 	 *
-	 * var cache (bool)
+	 * var cache
+	 * bool
 	 * allows cache information
 	 *
 	 */
@@ -86,7 +86,6 @@ class otinfo {
 				}
 				fclose($socket);
 				$object = simplexml_load_string($data); // simplexml_load_string from php 5
-				$this->object = $object;
 				$information = $this->_parseFromObject($object);
 				$cache = '';
 				foreach ($information as $index => $value){
