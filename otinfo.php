@@ -121,6 +121,13 @@ class Otinfo {
                 $this->attributes['monsters'][$index] = (string)$value;
             }
         }
+        
+        /* Check if is set and loop over the npcs node. */
+        if (isset($array->npcs)) {
+            foreach ($array->npcs->attributes() as $index => $value) {
+                $this->attributes['npcs'][$index] = (string)$value;
+            }
+        }
 
         /* Check if is set and loop over the map node. */
         if (isset($array->map)) {
