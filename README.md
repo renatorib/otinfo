@@ -6,7 +6,9 @@ Install
 ------
 Just download this repo, and include otinfo.php
 **Important:** Must have a writable `cache` folder in the same level of `otinfo.php` or will not work correctly
-`include('otinfo.php');`
+```php
+include('otinfo.php');
+```
 
 Get started
 ------
