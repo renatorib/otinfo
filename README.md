@@ -16,12 +16,12 @@ The first parameter is the server `$ip`, and the second is the `$port` (defined 
 
 *Get informations*
         if ($server->execute()) {
-          echo 'Players online: ' . $server->players['online'] . '<br />';
-          echo 'Server location: ' . $server->serverinfo['location'] . '<br />';
-          echo 'Client version: ' . $server->serverinfo['client'] . '<br />';
+          echo "Players online: " . $server->players['online'] . "<br />";
+          echo "Server location: " . $server->serverinfo['location'] . "<br />";
+          echo "Client version: " . $server->serverinfo['client'] . "<br />";
           // these are just a few examples
         } else {
-        echo 'Server offline';
+          echo "Server offline";
           // if execute() returns false, the server are offline
         }
 The `execute()' method catch/parse the responses returned by server and return false if server are offline.
@@ -47,5 +47,5 @@ As said before, you must have a writable `cache` folder in the same level of `ot
 The time of cache as default 120 seconds (two minutes). May you edit in `otinfo.php` changing this line
 `private static $cache = 180; //seconds you want`
 
-Made with <3 by Renato Ribeiro, Ranieri Althoff and Gabriel Pedro
-======
+Made with :heart: by Renato Ribeiro, Ranieri Althoff and Gabriel Pedro
+------
