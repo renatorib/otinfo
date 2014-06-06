@@ -15,7 +15,7 @@ Get started
 The first parameter is the server `$ip`, and the second is the `$port` (defined 7171 as default)
 
 *Get informations*
-```
+```php
 <?php
 if ($server->execute()) {
   echo "Players online: " . $server->players['online'] . "<br />";
