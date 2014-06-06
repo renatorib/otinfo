@@ -15,15 +15,17 @@ Get started
 The first parameter is the server `$ip`, and the second is the `$port` (defined 7171 as default)
 
 *Get informations*
-        if ($server->execute()) {
-          echo "Players online: " . $server->players['online'] . "<br />";
-          echo "Server location: " . $server->serverinfo['location'] . "<br />";
-          echo "Client version: " . $server->serverinfo['client'] . "<br />";
-          // these are just a few examples
-        } else {
-          echo "Server offline";
-          // if execute() returns false, the server are offline
-        }
+```
+if ($server->execute()) {
+  echo "Players online: " . $server->players['online'] . "<br />";
+  echo "Server location: " . $server->serverinfo['location'] . "<br />";
+  echo "Client version: " . $server->serverinfo['client'] . "<br />";
+  // these are just a few examples
+} else {
+  echo "Server offline";
+  // if execute() returns false, the server are offline
+}
+```
 The `execute()' method catch/parse the responses returned by server and return false if server are offline.
 
 Possible responses
