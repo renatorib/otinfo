@@ -58,5 +58,4 @@ The time of cache as default 120 seconds (two minutes). May you edit in `otinfo.
 private static $cache = 180; //seconds you want
 ```
 
-Made with :heart: by Renato Ribeiro, Ranieri Althoff and Gabriel Pedro
-------
+*Made with :heart: by Renato Ribeiro, Ranieri Althoff and Gabriel Pedro*
