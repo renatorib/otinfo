@@ -35,6 +35,7 @@ The `execute()' method catch/parse the responses returned by server and return f
 Possible responses
 ------
 **Each server has its own response, and may be different from the others. This means that not all respond with the same information, and a server may have information that others do not have.**
+
 Here are some possible answers nodes
 * `players`
 * `serverinfo`
@@ -44,7 +45,7 @@ Here are some possible answers nodes
 * `map`
 * `npcs` (thanks to DSpeichert)
 
-This means if you want to test, can print_r the nodes to know returned responses
+This means if you want to test, can `print_r`, `var_dump`, and whatelse, the nodes to know returned responses
 ```php
 print_r($server->players);
 print_r($server->serverinfo);
