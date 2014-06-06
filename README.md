@@ -34,7 +34,7 @@ Possible responses
 ------
 *Each server has its own response, and may be different from the others. This means that not all respond with the same information, and a server may have information that others do not have.*
 Here are some possible answers nodes
- `players`
+* `players`
 * `serverinfo`
 * `motd`
 * `owner`
@@ -42,14 +42,21 @@ Here are some possible answers nodes
 * `map`
 * `npcs` (thanks to DSpeichert)
 
-This means if you want to test, can print_r the nodes to know returned responses `print_r($server->players)` 
+This means if you want to test, can print_r the nodes to know returned responses
+```php
+print_r($server->players);
+print_r($server->serverinfo);
+//etc
+```
 
 Cache
 ------
 Otinfo cache itself not only for performance, but also to avoid empty responses, caused due to the protection of tfs.
 As said before, you must have a writable `cache` folder in the same level of `otinfo.php` or will not work correctly.
 The time of cache as default 120 seconds (two minutes). May you edit in `otinfo.php` changing this line
-`private static $cache = 180; //seconds you want`
+```php
+private static $cache = 180; //seconds you want
+```
 
 Made with :heart: by Renato Ribeiro, Ranieri Althoff and Gabriel Pedro
 ------
