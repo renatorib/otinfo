@@ -5,18 +5,18 @@ Catch information from servers' response by ip and port
 Install
 ------
 Just download this repo, and include otinfo.php
-*Important:* Must have a writable `cache` folder in the same level of `otinfo.php` or will not work correctly
+**Important:** Must have a writable `cache` folder in the same level of `otinfo.php` or will not work correctly
 `include('otinfo.php');`
 
 Get started
 ------
-*To instantiate an otserv, create a new Otinfo object*
+**To instantiate an otserv, create a new Otinfo object**
 ```php
 $server = new Otinfo('shadowcores.twifysoft.net');
 ```
 The first parameter is the server `$ip`, and the second is the `$port` (defined 7171 as default)
 
-*Get informations*
+**Get informations**
 ```php
 if ($server->execute()) {
   echo "Players online: " . $server->players['online'] . "<br />";
@@ -32,7 +32,7 @@ The `execute()' method catch/parse the responses returned by server and return f
 
 Possible responses
 ------
-*Each server has its own response, and may be different from the others. This means that not all respond with the same information, and a server may have information that others do not have.*
+**Each server has its own response, and may be different from the others. This means that not all respond with the same information, and a server may have information that others do not have.**
 Here are some possible answers nodes
 * `players`
 * `serverinfo`
@@ -58,4 +58,4 @@ The time of cache as default 120 seconds (two minutes). May you edit in `otinfo.
 private static $cache = 180; //seconds you want
 ```
 
-*Made with :heart: by Renato Ribeiro, Ranieri Althoff and Gabriel Pedro*
+**Made with :heart: by Renato Ribeiro, Ranieri Althoff and Gabriel Pedro**
