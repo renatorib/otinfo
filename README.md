@@ -16,6 +16,7 @@ The first parameter is the server `$ip`, and the second is the `$port` (defined 
 
 *Get informations*
 ```
+<?php
 if ($server->execute()) {
   echo "Players online: " . $server->players['online'] . "<br />";
   echo "Server location: " . $server->serverinfo['location'] . "<br />";
