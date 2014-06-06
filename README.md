@@ -56,7 +56,7 @@ Cache
 ------
 Otinfo cache itself not only for performance, but also to avoid empty responses, caused due to the protection of tfs.
 As said before, you must have a writable `cache` folder in the same level of `otinfo.php` or will not work correctly.
-The time of cache as default 120 seconds (two minutes). May you edit in `otinfo.php` changing this line
+The time of cache as default 180 seconds (three minutes). May you edit in `otinfo.php` changing this line
 ```php
 private static $cache = 180; //seconds you want
 ```
