@@ -88,59 +88,20 @@ class Otinfo {
 
     private function parseFromXml($xml){
         $array = simplexml_load_string($xml);
-
-        /* Check if is set and loop over the serverinfo node. */
-        if (isset($array->serverinfo)) {
-            foreach ($array->serverinfo->attributes() as $index => $value) {
-                $this->attributes['serverinfo'][$index] = (string)$value;
+        $atributes_array = array('serverinfo', 'owner', 'players', 'monsters', 'map', 'rates', 'npcs');
+        
+        /* Check if is set and loop over the atributes_array's nodes. */
+        foreach ($atributes_array as $atribute_name) {
+            if (isset($array->$atribute_name)) {
+                foreach ($array->$atribute_name->attributes() as $index => $value) {
+                    $this->attributes[$atribute_name][$index] = (string)$value;
+                }
             }
         }
 
         /* Check if is set and set the motd node. */
         if (isset($array->motd)) {
             $this->attributes['motd'] = (string)$array->motd;
-        }
-
-        /* Check if is set and loop over the owner node. */
-        if (isset($array->owner)) {
-            foreach ($array->owner->attributes() as $index => $value) {
-                $this->attributes['owner'][$index] = (string)$value;
-            }
-        }
-
-        /* Check if is set and loop over the players node. */
-        if (isset($array->players)) {
-            foreach ($array->players->attributes() as $index => $value) {            
-                $this->attributes['players'][$index] = (string)$value;
-            }
-        }
-
-        /* Check if is set and loop over the monsters node. */
-        if (isset($array->monsters)) {
-            foreach ($array->monsters->attributes() as $index => $value) {
-                $this->attributes['monsters'][$index] = (string)$value;
-            }
-        }
-        
-        /* Check if is set and loop over the npcs node. */
-        if (isset($array->npcs)) {
-            foreach ($array->npcs->attributes() as $index => $value) {
-                $this->attributes['npcs'][$index] = (string)$value;
-            }
-        }
-
-        /* Check if is set and loop over the map node. */
-        if (isset($array->map)) {
-            foreach ($array->map->attributes() as $index => $value) {
-                $this->attributes['map'][$index] = (string)$value;
-            }
-        }
-
-        /* Check if is set and loop over the rates node. */
-        if (isset($array->rates)) {
-            foreach ($array->rates->attributes() as $index => $value) {
-                $this->attributes['rates'][$index] = (string)$value;
-            }
         }
     }
 
