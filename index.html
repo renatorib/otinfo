@@ -11,18 +11,19 @@
 
 	body {
 		font-family: "Raleway";
+		background: #ecf0f1;
 	}
 
 	header {
 		text-align: center;
-		margin: 100px auto;
+		margin: 30px auto;
 	}
 
 	header a {
 		font-family: "Raleway";
 		font-weight: 100;
 		font-size: 120px;
-		color: #f40;
+		color: #27ae60;
 		display: block;
 		text-align: center;
 		text-decoration: none;
@@ -39,6 +40,10 @@
 	.center-wrap {
 		margin: 0 auto;
 		text-align: center;
+	}
+
+	main .code {
+		margin-bottom: 30px;
 	}
 
 	.btn {
@@ -82,6 +87,18 @@
 		color: white;
 	}
 	
+	pre code {
+		background: white !important;
+		width: 500px;
+		max-width: 80%;
+		border: 1px solid #ddd;
+		padding: 30px !important;
+		margin: 0 auto;
+		text-align: left;
+		border-radius: 10px;
+		-webkit-animation-delay: .2s;
+		animation-delay: .2s;
+	}
 
 	</style>
 </head>
@@ -92,14 +109,11 @@
 	</header>
 
 	<main>	
-
-		<div class="center-wrap">
-			<pre><code class="php">$server = new Otinfo('shadowcores.twifysoft.net');
-if ($server->execute()) {
-	echo "Players online: " . $server->players['online'];
-else {
-  echo "Server offline";
-}</pre></code>
+		<div class="center-wrap code">
+			<pre><code class="javascript animated bounceIn">$server = new Otinfo('shadowcores.twifysoft.net');
+echo $server->execute() ? "Server online" : "Server offline";
+echo "Players online: " . $server->players['online'];
+</pre></code>
 		</div>
 
 		<div class="center-wrap downloads">
@@ -109,8 +123,14 @@ else {
 	</main>
 
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="js/janimate-0.1/janimate-0.1.jquery.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('pre code').each(function(i, block) {
+		    hljs.highlightBlock(block);
+		});
+	});
+	</script>
 
 </body>
 </html>
