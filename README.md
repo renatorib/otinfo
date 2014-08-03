@@ -61,4 +61,5 @@ The time of cache as default 180 seconds (three minutes). May you edit in `otinf
 private static $cache = 180; //seconds you want
 ```
 
-**Made with :heart: by Renato Ribeiro, Ranieri Althoff and Gabriel Pedro**
+**Made with :heart: by Renato Ribeiro and Ranieri Althoff**
+***Thanks to yrpen, gpedro and DSpeichert for their contributions***
