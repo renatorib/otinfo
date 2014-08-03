@@ -5,7 +5,7 @@
  * @version 1.2.1
  * @author Renato Ribeiro <renatoribeiro@tibiaking.com>
  * @author Ranieri Althoff <ranieri@inf.ufsc.br>
- * @contributors yrpen, yrpen, DSpeichert
+ * @contributors yrpen, gpedro, DSpeichert
  * @copyright 2014 (C) by Renato Ribeiro <http://tibiaking.com>, Ranieri Althoff <http://otserv.com.br>, Gabriel Pedro <http://gpedro.net>
  * @license http://www.gnu.org/licenses/lgpl-3.0.txt GNU Lesser General Public License, Version 3
  * 
