@@ -63,4 +63,4 @@ private static $cache = 180; //seconds you want
 
 **Made with :heart: by Renato Ribeiro and Ranieri Althoff**
 
-####Thanks to yrpen, gpedro and DSpeichert for their contributions
+Thanks to yrpen, gpedro and DSpeichert for their contributions
