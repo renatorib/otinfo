@@ -19,8 +19,8 @@ class Otinfo {
     private $attributes;
     
     // Server connection information.
-    private static $host;
-    private static $port;
+    private $host;
+    private $port;
     
     // Cache time in seconds. Set to zero if unwanted. */
     private static $cache = 120;
@@ -30,11 +30,11 @@ class Otinfo {
      * what makes Open Tibia servers answer with their info. 
      */
     private static $message;
-	
+    
     function __construct($host, $port = 7171) {
         
-        static::$host = $host;
-        static::$port = $port;
+        $this->host = $host;
+        $this->port = $port;
         
         /**
          * We initialize here since PHP does not 
@@ -42,27 +42,27 @@ class Otinfo {
          */
         static::$message = chr(6).chr(0).chr(255).chr(255).'info';
     }
-	
+    
     /**
      * Retrieve informations from cache or socket.
      *
      * @return bool
      */
     public function execute() {
-	    
+        
         // Localization of the cache file
-        $cache_uri = 'cache' . DIRECTORY_SEPARATOR . static::$host . '.json';
+        $cache_uri = 'cache' . DIRECTORY_SEPARATOR . $this->host . '.json';
         
         if (static::$cache && file_exists($cache_uri) && filemtime($cache_uri) + static::$cache >= time()) {
-        	
-       	    $json = file_get_contents($cache_uri);
-       	    $this->attributes = json_decode($json, true);
-       	    return true;
-       	    
-       	} else {
-       			
+            
+            $json = file_get_contents($cache_uri);
+            $this->attributes = json_decode($json, true);
+            return true;
+            
+        } else {
+                
             /* Open socket with server */
-            if ($socket = @fsockopen(static::$host, static::$port, $errno, $errstr, 5)) {
+            if ($socket = @fsockopen($this->host, $this->port, $errno, $errstr, 5)) {
 
                 /* Write magic string to the socket and get the response */
                 $data = '';
@@ -71,10 +71,10 @@ class Otinfo {
                     $data .= fread($socket, 1024);
                 }
                 fclose($socket);
-				
+                
                 /* Parse XML response */
                 $this->parseFromXml($data);
-				
+                
                 /* Write response to a file if caching is enabled */
                 if (static::$cache && (is_dir('cache')) || mkdir('cache')) {
                     file_put_contents($cache_uri, $this);
@@ -114,7 +114,7 @@ class Otinfo {
     public function __get($key) {
         return $this->attributes[$key];
     }
-	
+    
     /**
      * Dynamically set attributes on the model.
      *
@@ -125,7 +125,7 @@ class Otinfo {
     public function __set($key, $value) {
         $this->attributes[$key] = $value;
     }
-	
+    
     /**
      * Convert the model to its string representation.
      *
