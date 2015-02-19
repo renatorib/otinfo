@@ -1,4 +1,4 @@
-OTServer Info
+OTServer Info [![Build Status](https://travis-ci.org/gpedro/otinfo.svg)](https://travis-ci.org/gpedro/otinfo)
 ======
 Catch information from servers' response by ip and port
 
@@ -59,6 +59,13 @@ As said before, you must have a writable `cache` folder in the same level of `ot
 The time of cache as default 180 seconds (three minutes). May you edit in `otinfo.php` changing this line
 ```php
 private static $cache = 180; //seconds you want
+```
+
+Timeout
+------
+When the connection is bad, you can increase the timeout
+```php
+private static $timeout = 5; //seconds you want
 ```
 
 **Made with :heart: by Renato Ribeiro and Ranieri Althoff**
