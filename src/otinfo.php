@@ -56,7 +56,7 @@ class Otinfo {
     public function execute() {
 
         // Localization of the cache file
-        $cache_uri = dirname(__FILE__) . '/cache' . DIRECTORY_SEPARATOR . $this->host . '.json';
+        $cache_uri = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'cache' . DIRECTORY_SEPARATOR . $this->host . '.json';
 
         if (static::$cache && file_exists($cache_uri) && filemtime($cache_uri) + static::$cache >= time()) {
 
