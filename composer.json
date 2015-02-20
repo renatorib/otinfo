@@ -17,7 +17,7 @@
       "email": "lordfire@otserv.com.br",
       "homepage": "https://ranisalt.github.io/",
       "role": "Developer"
-    },
+    }
   ],
   "require": {
     "phpunit/phpunit": "3.7.*"
