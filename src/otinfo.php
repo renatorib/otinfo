@@ -13,56 +13,61 @@
  *
  */
 
+namespace Otinfo;
+
 class Otinfo {
 
     // Server attributes.
     private $attributes;
-    
+
     // Server connection information.
     private $host;
     private $port;
-    
-    // Cache time in seconds. Set to zero if unwanted. */
+
+    // Cache time in seconds. Set to zero if unwanted.
     private static $cache = 120;
-    
+
+    // Timeout in seconds. Default: 5s. */
+    private static $timeout = 5;
+
     /** 
      * Magic message
      * what makes Open Tibia servers answer with their info. 
      */
     private static $message;
-    
+
     function __construct($host, $port = 7171) {
-        
+
         $this->host = $host;
         $this->port = $port;
-        
+
         /**
          * We initialize here since PHP does not 
          * support non-trivial initializers 
          */
         static::$message = chr(6).chr(0).chr(255).chr(255).'info';
     }
-    
+
     /**
      * Retrieve informations from cache or socket.
      *
      * @return bool
      */
     public function execute() {
-        
+
         // Localization of the cache file
-        $cache_uri = 'cache' . DIRECTORY_SEPARATOR . $this->host . '.json';
-        
+        $cache_uri = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'cache' . DIRECTORY_SEPARATOR . $this->host . '.json';
+
         if (static::$cache && file_exists($cache_uri) && filemtime($cache_uri) + static::$cache >= time()) {
-            
+
             $json = file_get_contents($cache_uri);
             $this->attributes = json_decode($json, true);
             return true;
-            
+
         } else {
-                
+
             /* Open socket with server */
-            if ($socket = @fsockopen($this->host, $this->port, $errno, $errstr, 5)) {
+            if ($socket = @fsockopen($this->host, $this->port, $errno, $errstr, static::$timeout)) {
 
                 /* Write magic string to the socket and get the response */
                 $data = '';
@@ -71,25 +76,25 @@ class Otinfo {
                     $data .= fread($socket, 1024);
                 }
                 fclose($socket);
-                
+
                 /* Parse XML response */
                 $this->parseFromXml($data);
-                
+
                 /* Write response to a file if caching is enabled */
                 if (static::$cache && (is_dir('cache')) || mkdir('cache')) {
                     file_put_contents($cache_uri, $this);
                 }
-                
+
                 return true;
             }
-        return false;
+            return false;
         }
     }
 
     private function parseFromXml($xml){
         $array = simplexml_load_string($xml);
         $atributes_array = array('serverinfo', 'owner', 'players', 'monsters', 'map', 'rates', 'npcs');
-        
+
         /* Check if is set and loop over the atributes_array's nodes. */
         foreach ($atributes_array as $atribute_name) {
             if (isset($array->$atribute_name)) {
@@ -114,7 +119,7 @@ class Otinfo {
     public function __get($key) {
         return $this->attributes[$key];
     }
-    
+
     /**
      * Dynamically set attributes on the model.
      *
@@ -125,7 +130,7 @@ class Otinfo {
     public function __set($key, $value) {
         $this->attributes[$key] = $value;
     }
-    
+
     /**
      * Convert the model to its string representation.
      *
