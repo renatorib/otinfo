@@ -1,4 +1,4 @@
-OTServer Info [![Build Status](https://travis-ci.org/gpedro/otinfo.svg?branch=master)](https://travis-ci.org/gpedro/otinfo)
+OTServer Info [![Build Status](https://travis-ci.org/renatorib/otinfo.svg?branch=master)](https://travis-ci.org/renatorib/otinfo)
 ======
 Catch information from servers' response by ip and port
 
