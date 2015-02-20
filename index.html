@@ -1,0 +1,143 @@
+<html>
+<head>
+	<title>otinfo - php open tibia info | TibiaKing.com</title>
+	<link rel="stylesheet" type="text/css" href="http://daneden.github.io/animate.css/animate.min.css" />
+	<link href='http://fonts.googleapis.com/css?family=Raleway:100,400' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta property="og:image" content="img/janimate.png">
+	<meta name="twitter:image" content="img/janimate.png">
+	<style type="text/css">
+
+	body {
+		font-family: "Raleway";
+		background: #ecf0f1;
+	}
+
+	header {
+		text-align: center;
+		margin: 30px auto;
+	}
+
+	header h1 {
+		font-family: "Raleway";
+		font-weight: 100;
+		font-size: 150px;
+		color: #2c3e50;
+		display: block;
+		text-align: center;
+		text-decoration: none;
+		margin: 0;
+	}
+
+	@media (max-width: 400px){
+		header h1 {
+			font-size: 100px;
+		}
+	}
+
+	header span {
+		display: block;
+		margin-top: -20px;
+		color: #CCC;
+		font-weight: 400;
+		font-size: 16px;
+	}
+
+	.center-wrap {
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	main .code {
+		margin-bottom: 30px;
+	}
+
+	.btn {
+		text-decoration: none;
+		padding: 15px 30px;
+		font-size: 18px;
+		background: transparent;
+		border: 0px solid #333;
+		color: #333;
+		transition: all 0.3s linear;
+		-webkit-transition: all 0.3s linear;
+		-moz-transition: all 0.3s linear;
+		font-weight: 400;
+	}
+
+	.btn:hover {
+		background: #333;
+		color: white;
+		transition: all 0.1s linear;
+		-webkit-transition: all 0.1s linear;
+		-moz-transition: all 0.1s linear;
+	}
+
+	.btn-blue {
+		border-color: #0af;
+		color: #0af;
+	}
+
+	.btn-blue:hover {
+		background: #0af;
+		color: white;
+	}
+
+	.btn-alizarin {
+		border-color: #e74c3c;
+		color: #e74c3c;
+	}
+
+	.btn-alizarin:hover {
+		background: #e74c3c;
+		color: white;
+	}
+	
+	pre code {
+		background: white !important;
+		width: 500px;
+		max-width: 80%;
+		padding: 30px !important;
+		margin: 0 auto;
+		text-align: left;
+		border-radius: 10px;
+		-webkit-animation-delay: .2s;
+		animation-delay: .2s;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	}
+
+	</style>
+</head>
+<body>
+	<header class="animated bounceInUp">
+		<h1>otinfo</h1>
+		<span>php open tibia info</span>
+	</header>
+
+	<main>	
+		<div class="center-wrap code">
+			<pre><code class="javascript animated bounceIn">$server = new Otinfo('shadowcores.twifysoft.net');
+echo $server->execute() ? "Server online" : "Server offline";
+echo "Players online: " . $server->players['online'];
+</pre></code>
+		</div>
+
+		<div class="center-wrap downloads">
+			<a class="btn btn-alizarin animated bounceInLeft" href="http://github.com/renatorib/otinfo" target="_blank">View on github</a>
+			<a class="btn btn-blue animated bounceInRight" href="https://raw.githubusercontent.com/renatorib/otinfo/master/otinfo.php" target="_blank">Download</a>
+		</div>
+	</main>
+
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('pre code').each(function(i, block) {
+		    hljs.highlightBlock(block);
+		});
+	});
+	</script>
+
+</body>
+</html>
