@@ -70,4 +70,8 @@ private static $timeout = 5; //seconds you want
 
 **Made with :heart: by Renato Ribeiro and Ranieri Althoff**
 
-Thanks to **yrpen**, **gpedro** and **DSpeichert** for their contributions
+**Contributors** - my heartfelt thanks
+* gpedro
+* rmobis
+* yrpen
+* DSpeichert
