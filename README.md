@@ -43,7 +43,8 @@ Here are some possible answers nodes
 * `owner`
 * `monsters`
 * `map`
-* `npcs` (thanks to DSpeichert)
+* `npcs`
+* maybe others
 
 This means if you want to test, can `print_r`, `var_dump`, and whatelse, the nodes to know returned responses
 ```php
