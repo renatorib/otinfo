@@ -1,7 +1,7 @@
 <?php
 require('otinfo.php');
 
-$server = new Otinfo('underwar.org');
+$server = new Otinfo\Otinfo('underwar.org');
 
 if ($server->execute()) {
     echo 'Players online: ', $server->players['online'], '<br />';
