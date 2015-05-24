@@ -1,4 +1,4 @@
-OTServer Info [![Build Status](https://travis-ci.org/gpedro/otinfo.svg?branch=master)](https://travis-ci.org/gpedro/otinfo)
+OTServer Info [![Build Status](https://travis-ci.org/renatorib/otinfo.svg?branch=master)](https://travis-ci.org/renatorib/otinfo)
 ======
 Catch information from servers' response by ip and port
 
@@ -43,7 +43,8 @@ Here are some possible answers nodes
 * `owner`
 * `monsters`
 * `map`
-* `npcs` (thanks to DSpeichert)
+* `npcs`
+* maybe others
 
 This means if you want to test, can `print_r`, `var_dump`, and whatelse, the nodes to know returned responses
 ```php
@@ -70,4 +71,8 @@ private static $timeout = 5; //seconds you want
 
 **Made with :heart: by Renato Ribeiro and Ranieri Althoff**
 
-Thanks to **yrpen**, **gpedro** and **DSpeichert** for their contributions
+**Contributors** - my heartfelt thanks
+* gpedro
+* rmobis
+* yrpen
+* DSpeichert

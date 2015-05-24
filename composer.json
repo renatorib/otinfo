@@ -1,8 +1,27 @@
 {
+  "name": "renatorib/otinfo",
+  "type": "library",
+  "description": "Open Tibia Server Info Parser",
+  "keywords": ["tibia","otserv","opentibia"],
+  "homepage": "http://github.com/renatorib/otinfo",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Renato Ribeiro",
+      "email": "renatoribeiro@tibiaking.com",
+      "homepage": "http://rena.to/",
+      "role": "Front-end Developer"
+    },
+    {
+      "name": "Ranieri Althoff",
+      "email": "lordfire@otserv.com.br",
+      "homepage": "https://ranisalt.github.io/",
+      "role": "Developer"
+    }
+  ],
   "require": {
     "phpunit/phpunit": "3.7.*"
   },
-
   "autoload": {
     "classmap": [
       "src/"
