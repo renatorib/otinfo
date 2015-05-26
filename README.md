@@ -14,7 +14,7 @@ Get started
 ------
 **To instantiate an otserv, create a new Otinfo object**
 ```php
-$server = new Otinfo('shadowcores.twifysoft.net');
+$server = new Otinfo\Otinfo('shadowcores.twifysoft.net');
 ```
 The first parameter is the server `$ip`, and the second is the `$port` (defined 7171 as default)
 
